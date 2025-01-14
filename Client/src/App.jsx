@@ -1,13 +1,20 @@
-import React from 'react'
-import MapNew from './Component/MapNew'
-import L from "leaflet";
-import './App.css'
-const App = () => {
-  
-  return (
-    // <MapComponent />
-    <MapNew />
-  )
-}
+import React, { useState } from "react";
+import MapComponent from "./Component/Map/MapComponent";
+import "./App.css";
+import UserListPanel from "./Component/UserListPanel.jsx/UserListPanel";
 
-export default App
+const App = () => {
+  const [location, setlocation] = useState({
+    latitude: "27.7172",
+    longitude: "85.324",
+  });
+
+  return (
+    <>
+      <MapComponent location={location} />
+      <UserListPanel />
+    </>
+  );
+};
+
+export default App;
