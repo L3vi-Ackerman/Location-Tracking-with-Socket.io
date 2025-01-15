@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import L from "leaflet"; 
 import "leaflet/dist/leaflet.css"; 
 
-const MapNew = ({location}) => {
+const MapComponent = ({location}) => {
   const mapContainerRef = useRef(null);
   useEffect(() => {
 
@@ -32,9 +32,9 @@ const MapNew = ({location}) => {
     <div
       id="map"
       ref={mapContainerRef}
-      style={{ height: "100vh", width: "100%" }}
+      style={{ height: "100vh", width: "100%"}}
     ></div>
   );
 };
 
-export default MapNew;
+export default MapComponent;
