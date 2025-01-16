@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { getLocation } from "../../Data/getLocation";
+import { startTracking } from "../../Data/watchLocation";
 
 const MapComponent = () => {
   const mapContainerRef = useRef(null);
@@ -12,7 +12,7 @@ const MapComponent = () => {
 
   // useEffect Hook for getting location
   useEffect(() => {
-    getLocation()
+    startTracking()
       .then((location) => {
         setLocation(location);
       })
