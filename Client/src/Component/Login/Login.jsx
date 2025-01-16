@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AuthForm from "../Form/Form";
 import Box from "@mui/material/Box";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -48,23 +49,7 @@ function Login() {
           <Typography variant="h3" className="mb-3">
             Welcome back!
           </Typography>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email"name="email" placeholder="Enter email" value={formData.email} onChange={handleChange} />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange}/>
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
+          <AuthForm formType={'login'} formData={formData} handleChange={handleChange} handleSubmit={handleSubmit}/>
         </Box>
 
         {/* Image on the Right */}
